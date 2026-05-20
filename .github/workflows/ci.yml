@@ -1,0 +1,81 @@
+# Per-pack CI — runs ruff + pytest on each pack whose files changed.
+#
+# Path filters: a job for a pack only runs if that pack's files
+# (or the workflow itself, or root config) changed in the push/PR.
+# This keeps CI fast and parallelizable.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  UV_NO_SOURCES: 1
+
+jobs:
+  pack-design:
+    name: streamtex-pack-design
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: streamtex-pack-design
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect changes affecting streamtex-pack-design
+        id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            run:
+              - 'streamtex-pack-design/**'
+              - '.github/workflows/ci.yml'
+
+      - name: Install uv
+        if: steps.changes.outputs.run == 'true'
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        if: steps.changes.outputs.run == 'true'
+        run: uv sync
+
+      - name: Ruff
+        if: steps.changes.outputs.run == 'true'
+        run: uv run ruff check streamtex_design/ tests/
+
+      - name: Pytest
+        if: steps.changes.outputs.run == 'true'
+        run: uv run pytest tests/ -v
+
+  pack-manuals:
+    name: streamtex-pack-manuals
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: streamtex-pack-manuals
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect changes affecting streamtex-pack-manuals
+        id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            run:
+              - 'streamtex-pack-manuals/**'
+              - '.github/workflows/ci.yml'
+
+      - name: Install uv
+        if: steps.changes.outputs.run == 'true'
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        if: steps.changes.outputs.run == 'true'
+        run: uv sync
+
+      - name: Ruff
+        if: steps.changes.outputs.run == 'true'
+        run: uv run ruff check streamtex_manuals/

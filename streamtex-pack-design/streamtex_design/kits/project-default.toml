@@ -1,0 +1,18 @@
+# Kit: project-default — Generic project on the default design system.
+
+name = "project-default"
+description = "Default generic-project kit."
+since = "2026-05-19"
+
+[design_system]
+ref = "default"
+
+[components]
+include = [
+    "callout",
+    "card_grid",
+    "cite",
+    "inline_emphasis",
+    "slide_heading",
+    "takeaways",
+]

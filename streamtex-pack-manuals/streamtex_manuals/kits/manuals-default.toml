@@ -1,0 +1,15 @@
+# Kit: manuals-default — Cover + overview components for a documentation manual.
+
+name = "manuals-default"
+description = "Cover hero, semantic feature grid, and pitch hero on top of the default design system."
+since = "2026-05-19"
+
+[design_system]
+ref = "default"
+
+[components]
+include = [
+    "level_badge_hero",
+    "column_features",
+    "pitch_hero",
+]

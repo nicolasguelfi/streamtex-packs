@@ -1,0 +1,17 @@
+# streamtex-pack-manuals — Manual-authoring components on top of streamtex-pack-design.
+
+[manifest]
+format = "0.1"
+
+[pack]
+name = "streamtex-pack-manuals"
+version = "0.1.0"
+author = "Nicolas Guelfi"
+license = "BUSL-1.1"
+streamtex_compat = ">=0.7.7,<1.0"
+
+[entrypoint]
+module = "streamtex_manuals"
+
+[scopes]
+manuals = "Components specific to documentation manuals (level badges, signature grids, pitch heroes)"

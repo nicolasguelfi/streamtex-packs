@@ -1,0 +1,20 @@
+# Kit: core — Universal primitives + compositions used in every project.
+
+name = "core"
+description = "Atoms and molecules used in every StreamTeX project."
+since = "2026-05-19"
+
+[design_system]
+ref = "default"
+
+[components]
+include = [
+    "slide_heading",
+    "cite",
+    "inline_emphasis",
+    "callout",
+    "card_grid",
+    "comparison_table",
+    "takeaways",
+    "term_definition_list",
+]

@@ -1,0 +1,23 @@
+# OS
+*.DS_Store
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*~
+
+# Python (in case scripts get added)
+__pycache__/
+*.pyc
+.venv/
+
+# Test/CI artifacts
+.pytest_cache/
+.ruff_cache/
+
+# uv / build
+uv.lock
+*.egg-info/
+build/
+dist/

@@ -1,0 +1,49 @@
+[project]
+name = "streamtex-pack-manuals"
+version = "0.1.0"
+description = "Manual-authoring components on top of streamtex-pack-design (level badges, semantic feature grids, pitch heroes)."
+readme = "README.md"
+authors = [{ name = "Nicolas Guelfi" }]
+license = "BUSL-1.1"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = [
+    "streamtex>=0.7.7",
+    "streamtex-pack-design @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-design-v0.2.4#subdirectory=streamtex-pack-design",
+]
+
+# Local dev override — points to the sibling pack in the monorepo
+# (uv sync --no-sources in CI/Docker ignores this and falls back to the
+# git+https url in the dep above).
+[tool.uv.sources]
+streamtex-pack-design = { path = "../streamtex-pack-design", editable = true }
+
+[project.entry-points."streamtex.packs"]
+streamtex-pack-manuals = "streamtex_manuals"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["streamtex_manuals*"]
+
+[tool.setuptools.package-data]
+streamtex_manuals = [
+    "_pack_manifest.toml",
+    "kits/*.toml",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["F403", "F405", "E701", "E741"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "streamtex[cli]>=0.7.7",
+]

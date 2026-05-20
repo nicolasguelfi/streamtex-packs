@@ -1,0 +1,26 @@
+# Kit: course-default — Slide-based course with the default design system.
+
+name = "course-default"
+description = "Slide-based course on the default dark design system."
+since = "2026-05-19"
+
+[design_system]
+ref = "default"
+
+[components]
+include = [
+    "title_slide",
+    "slide_heading",
+    "callout",
+    "card_grid",
+    "categorized_grid",
+    "comparison_table",
+    "takeaways",
+    "stat_hero",
+    "evidence_insight",
+    "exercise_flow",
+    "cite",
+    "inline_emphasis",
+    "term_definition_list",
+    "narrative_transition",
+]

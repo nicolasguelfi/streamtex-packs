@@ -1,0 +1,22 @@
+# Kit: manual-default — Documentation manual with the default design system.
+
+name = "manual-default"
+description = "Documentation manual on the default design system."
+since = "2026-05-19"
+
+[design_system]
+ref = "default"
+
+[components]
+include = [
+    "manual_section",
+    "composite_block",
+    "feature_walkthrough",
+    "api_reference_card",
+    "callout",
+    "card_grid",
+    "comparison_table",
+    "cite",
+    "inline_emphasis",
+    "term_definition_list",
+]

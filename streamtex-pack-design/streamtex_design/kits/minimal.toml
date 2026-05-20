@@ -1,0 +1,15 @@
+# Kit: minimal — Just the 3 atoms (basic emphasis primitives).
+
+name = "minimal"
+description = "Minimal kit — slide_heading + cite + inline_emphasis only."
+since = "2026-05-19"
+
+[design_system]
+ref = "default"
+
+[components]
+include = [
+    "slide_heading",
+    "cite",
+    "inline_emphasis",
+]

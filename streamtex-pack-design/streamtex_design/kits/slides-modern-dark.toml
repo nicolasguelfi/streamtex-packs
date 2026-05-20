@@ -1,0 +1,20 @@
+# Kit: slides-modern-dark — Slides on the modern_dark design system.
+
+name = "slides-modern-dark"
+description = "Slide deck on the modern_dark design system."
+since = "2026-05-19"
+
+[design_system]
+ref = "modern_dark"
+
+[components]
+include = [
+    "title_slide",
+    "slide_heading",
+    "callout",
+    "card_grid",
+    "stat_hero",
+    "takeaways",
+    "narrative_transition",
+    "cite",
+]
