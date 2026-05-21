@@ -37,6 +37,8 @@ subtitle and metadata sit below in muted styles.
 ### PARAMS
 - subtitle: optional
 - metadata: optional one-liner
+- toc_lvl: optional TOC level (e.g. "1") so the title registers a sidebar /
+  navigation entry — slide components do not register the TOC on their own.
 
 ### INTERDITS
 - No bullets / lists on a title slide.
@@ -71,9 +73,16 @@ __component_meta__ = {
 }
 
 
-def title_slide(*, design_system, title: str = "", subtitle: str = "", metadata: str = "") -> None:
-    """Render a cover title slide."""
-    st_write(design_system.titles.slide, title)
+def title_slide(
+    *, design_system, title: str = "", subtitle: str = "", metadata: str = "",
+    toc_lvl: str | None = None,
+) -> None:
+    """Render a cover title slide.
+
+    Pass ``toc_lvl`` (e.g. ``"1"``) to register this title in the table of
+    contents / sidebar navigation; defaults to ``None`` (no TOC entry).
+    """
+    st_write(design_system.titles.slide, title, toc_lvl=toc_lvl)
     if subtitle:
         st_space("v", 1.0)
         st_write(design_system.titles.subtitle, subtitle)

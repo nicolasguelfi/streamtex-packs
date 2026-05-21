@@ -5,6 +5,29 @@ All notable changes to streamtex-pack-design are documented in this file.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/);
 versions follow semver pinned to the reuse architecture milestones.
 
+## [0.2.5] — 2026-05-21 — Slide TOC propagation, part_intro, hover docstring fix
+
+### Added
+
+- **`part_intro` component** — a section-opener slide (part label + title +
+  objective + role-in-flow). Registers a table-of-contents entry at level
+  `"1"` by default, so every part of a deck is reachable from the sidebar and
+  the narrative structure is legible. Addresses the GSE-ODOO finding that
+  decks had no per-part intro slides.
+
+### Fixed
+
+- **`title_slide` and `slide_heading` now propagate `toc_lvl`** (optional,
+  default `None`). Previously these slide components rendered their title via
+  `st_write` *without* a TOC level, so the sidebar / table of contents stayed
+  empty even on a 50-slide deck (the GSE-ODOO defect). Pass `toc_lvl="1"` to
+  register a navigation entry. Backwards-compatible: omitting it preserves the
+  prior (no-TOC) behaviour.
+- **`slide_heading` docstring** corrected: it claimed the `st_hover_tooltip`
+  widget "ships in streamtex if the project depends on it" — the widget did
+  not exist. It now ships in the core `streamtex` library; the example imports
+  it directly.
+
 ## [0.2.4] — 2026-05-20 — Migration to streamtex-packs monorepo
 
 ### Changed

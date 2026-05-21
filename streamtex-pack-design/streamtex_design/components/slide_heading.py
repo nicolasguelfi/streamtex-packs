@@ -32,6 +32,8 @@ underline rule or subtitle.
 ### PARAMS
 - subtitle: optional secondary line
 - align: center | left
+- toc_lvl: optional TOC level (e.g. "1") so the heading registers a sidebar /
+  navigation entry — slide components do not register the TOC on their own.
 
 ### INTERDITS
 - No inline emphasis inside the heading.
@@ -56,13 +58,13 @@ underline rule or subtitle.
 
 The simple `slide_heading(title=..., subtitle=...)` covers the canonical
 case. If a slide needs a **section-recap tooltip on hover**, compose it
-inline instead of using this component — `streamtex_design` does not
-bundle the `st_hover_tooltip` widget for separation of concerns.
+inline instead of using this component — for separation of concerns the
+heading itself stays tooltip-free. The `st_hover_tooltip` widget ships in
+the core `streamtex` library (palette-neutral); import it directly.
 Pattern:
 
 ```python
-from streamtex import st_block, st_grid, st_write, st_zoom
-# st_hover_tooltip ships in `streamtex` if the project depends on it.
+from streamtex import st_block, st_grid, st_hover_tooltip, st_write, st_zoom
 
 with st_grid(cols="95% 5%", gap="0px") as g:
     with g.cell():
@@ -90,8 +92,15 @@ __component_meta__ = {
 }
 
 
-def slide_heading(*, design_system, title: str = "", subtitle: str = "") -> None:
-    """Render a slide-top heading + optional subtitle."""
-    st_write(design_system.titles.slide, title)
+def slide_heading(
+    *, design_system, title: str = "", subtitle: str = "",
+    toc_lvl: str | None = None,
+) -> None:
+    """Render a slide-top heading + optional subtitle.
+
+    Pass ``toc_lvl`` (e.g. ``"1"``) to register this heading in the table of
+    contents / sidebar navigation; defaults to ``None`` (no TOC entry).
+    """
+    st_write(design_system.titles.slide, title, toc_lvl=toc_lvl)
     if subtitle:
         st_write(design_system.titles.subtitle, subtitle)
