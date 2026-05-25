@@ -1,0 +1,17 @@
+# streamtex-pack-gse — Project-specific pack for the AI4SE / GSE training family.
+
+[manifest]
+format = "0.1"
+
+[pack]
+name = "streamtex-pack-gse"
+version = "0.1.0"
+author = "Nicolas Guelfi"
+license = "BUSL-1.1"
+streamtex_compat = ">=0.7.7,<1.0"
+
+[entrypoint]
+module = "streamtex_gse"
+
+[scopes]
+gse = "Project-specific components for the AI4SE / GSE training family (transition_gse, gse_letter, gse design system)"

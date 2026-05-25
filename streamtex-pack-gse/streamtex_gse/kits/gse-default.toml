@@ -1,0 +1,14 @@
+# Kit: gse-default — GSE design system + transition_gse + gse_letter.
+
+name = "gse-default"
+description = "GSE-One brand palette (amber highlight + G/S/E letter colors) with the transition_gse pivot slide and the gse_letter inline component."
+since = "2026-05-23"
+
+[design_system]
+ref = "gse"
+
+[components]
+include = [
+    "transition_gse",
+    "gse_letter",
+]

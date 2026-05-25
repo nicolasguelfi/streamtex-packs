@@ -1,0 +1,47 @@
+[project]
+name = "streamtex-pack-gse"
+version = "0.1.0"
+description = "Project-specific StreamTeX pack for the AI4SE / GSE training family: GSE-One design system, transition_gse, gse_letter."
+readme = "README.md"
+authors = [{ name = "Nicolas Guelfi" }]
+license = "BUSL-1.1"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = [
+    "streamtex>=0.7.7",
+    "streamtex-pack-design @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-design-v0.3.0#subdirectory=streamtex-pack-design",
+]
+
+# Local dev override — points to the sibling pack in the monorepo
+[tool.uv.sources]
+streamtex-pack-design = { path = "../streamtex-pack-design", editable = true }
+
+[project.entry-points."streamtex.packs"]
+streamtex-pack-gse = "streamtex_gse"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["streamtex_gse*"]
+
+[tool.setuptools.package-data]
+streamtex_gse = [
+    "_pack_manifest.toml",
+    "kits/*.toml",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["F403", "F405", "E701", "E741"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "streamtex[cli]>=0.7.7",
+]
