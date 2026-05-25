@@ -1,0 +1,21 @@
+# Kit: training-default — Components for training sessions and instructor-led material.
+
+name = "training-default"
+description = "Trainer profiles, training header/footer strips, FAQ, glossary, references, and changelog card. Sits on top of the default design system; pairs with components from streamtex-pack-design for content blocks."
+since = "2026-05-23"
+
+[design_system]
+ref = "default"
+
+[components]
+include = [
+    "trainer_profile",
+    "training_header",
+    "training_footer",
+    "faq",
+    "glossary",
+    "references_list",
+    "changelog_card",
+    "level_badge_hero",
+    "pitch_hero",
+]

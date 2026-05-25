@@ -5,7 +5,7 @@ format = "0.1"
 
 [pack]
 name = "streamtex-pack-manuals"
-version = "0.1.0"
+version = "0.2.0"
 author = "Nicolas Guelfi"
 license = "BUSL-1.1"
 streamtex_compat = ">=0.7.7,<1.0"
@@ -15,3 +15,4 @@ module = "streamtex_manuals"
 
 [scopes]
 manuals = "Components specific to documentation manuals (level badges, signature grids, pitch heroes)"
+training = "Components for instructor-led material (trainer profiles, training header/footer, FAQ, glossary, references, changelog)"

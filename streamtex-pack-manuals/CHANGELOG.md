@@ -5,6 +5,34 @@ All notable changes to streamtex-pack-manuals are documented in this file.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/);
 versions follow semver pinned to the reuse architecture milestones.
 
+## [0.2.0] — 2026-05-23 — Training components (FAQ, trainer, header/footer, glossary, references, changelog)
+
+### Added
+
+- **7 new components** to broaden the pack from "documentation manuals" to
+  "manuals + instructor-led training material":
+  - `faq` — vertical list of numbered Q/A pairs.
+  - `trainer_profile` — two-column identity card (photo + name/role/bio).
+  - `training_header` — thin per-page header strip (program · module / right label).
+  - `training_footer` — thin closing strip (author + license / version).
+  - `glossary` — alphabetically-grouped term/definition list with per-letter TOC anchors.
+  - `references_list` — numbered bibliography references with optional URLs.
+  - `changelog_card` — recent changelog entries (version + date + summary).
+- **New kit `training-default`** bundling the 7 new components together with
+  `level_badge_hero` and `pitch_hero` from this pack, on top of the
+  `default` design system.
+- **New scope `training`** in the pack manifest (alongside `manuals`).
+
+### Changed
+
+- Version bumped from 0.1.0 to 0.2.0 (minor: additive, no breaking changes
+  to existing components).
+- `pack-design` dependency pinned to `v0.3.0` (was `v0.2.4`). Required for
+  the new `colors.info` / `colors.accent` / `colors.muted` semantics used by
+  the new components.
+- Description broadened from "Manual-authoring" to "Manual-authoring +
+  training".
+
 ## [0.1.0] — 2026-05-20 — First public release in streamtex-packs monorepo
 
 ### Added

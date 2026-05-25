@@ -1,7 +1,7 @@
 [project]
 name = "streamtex-pack-manuals"
-version = "0.1.0"
-description = "Manual-authoring components on top of streamtex-pack-design (level badges, semantic feature grids, pitch heroes)."
+version = "0.2.0"
+description = "Manual-authoring + training components on top of streamtex-pack-design (level badges, pitch heroes, FAQ, glossary, references, trainer profile, header/footer strips)."
 readme = "README.md"
 authors = [{ name = "Nicolas Guelfi" }]
 license = "BUSL-1.1"
@@ -9,7 +9,7 @@ license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = [
     "streamtex>=0.7.7",
-    "streamtex-pack-design @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-design-v0.2.4#subdirectory=streamtex-pack-design",
+    "streamtex-pack-design @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-design-v0.3.0#subdirectory=streamtex-pack-design",
 ]
 
 # Local dev override — points to the sibling pack in the monorepo
