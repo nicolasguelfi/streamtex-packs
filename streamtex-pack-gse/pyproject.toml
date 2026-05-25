@@ -35,6 +35,11 @@ streamtex_gse = [
     "kits/*.toml",
     "palettes/*.json",
     "ai_prompts/**/*.txt",
+    "archetypes/*.md",
+    "guidelines/*.md",
+    "skills/*.md",
+    "agents/*.md",
+    "integrations/**/*",
 ]
 
 [tool.ruff]

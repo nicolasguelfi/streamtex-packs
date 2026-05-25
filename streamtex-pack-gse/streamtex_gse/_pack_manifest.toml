@@ -21,3 +21,10 @@ gse = "Project-specific components for the AI4SE / GSE training family (transiti
 [pack.data]
 palettes = ["main"]
 ai_prompts = ["scene_generation"]
+archetypes = [
+    "balance", "ballot", "bridge", "closing", "cycle", "doorway",
+    "federation", "forking-path", "horizon", "panel-spires", "path-of-arrows",
+]
+guidelines = ["graphic-line", "composition-rules"]
+skills = ["gse-author"]
+integrations = ["streamtex"]
