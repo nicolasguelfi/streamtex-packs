@@ -1,20 +1,23 @@
 [project]
 name = "streamtex-pack-gse"
-version = "0.1.0"
-description = "Project-specific StreamTeX pack for the AI4SE / GSE training family: GSE-One design system, transition_gse, gse_letter."
+version = "2.0.0"
+description = "Pack for the AI4SE / GSE training family (manifest 0.2): GSE-One design system + transition_gse + gse_letter + canonical palette JSON + AI prompt artifacts (prefix+suffixes)."
 readme = "README.md"
 authors = [{ name = "Nicolas Guelfi" }]
 license = "BUSL-1.1"
 license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = [
-    "streamtex>=0.7.7",
+    "streamtex>=0.7.16",
     "streamtex-pack-design @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-design-v0.3.0#subdirectory=streamtex-pack-design",
 ]
 
-# Local dev override — points to the sibling pack in the monorepo
+# Local dev override — points to the sibling packs + the editable streamtex lib
+# in the workspace (`streamtex-dev/streamtex`). CI / docker bypass via
+# `uv sync --no-sources` (falls back to PyPI / git URLs).
 [tool.uv.sources]
 streamtex-pack-design = { path = "../streamtex-pack-design", editable = true }
+streamtex = { path = "../../streamtex", editable = true }
 
 [project.entry-points."streamtex.packs"]
 streamtex-pack-gse = "streamtex_gse"
@@ -30,6 +33,8 @@ include = ["streamtex_gse*"]
 streamtex_gse = [
     "_pack_manifest.toml",
     "kits/*.toml",
+    "palettes/*.json",
+    "ai_prompts/**/*.txt",
 ]
 
 [tool.ruff]

@@ -1,0 +1,52 @@
+{
+  "_comment": "GSE canonical palette. Source of truth: graphic-line.md §3. Schema: streamtex.core.artifacts.palette (manifest 0.2).",
+  "name": "main",
+  "package": "gse",
+  "version": "1.0.0",
+  "since": "2026-05-05",
+  "colors": {
+    "bg-navy": {
+      "hex": "#1A1A2E",
+      "role": "base canvas — deep dark navy, slight blue tint",
+      "dominance": "60-70% of frame",
+      "constraints": "NEVER pure black; NEVER warm cream; NEVER yellow-dominant"
+    },
+    "electric-blue": {
+      "hex": "#7AB8F5",
+      "role": "primary — ideological dimension, structure, abstract figures, classical building icon",
+      "dominance": "primary workhorse alongside teal"
+    },
+    "teal": {
+      "hex": "#2EC4B6",
+      "role": "accent — technical dimension, growth, network lines, modern building icon",
+      "dominance": "primary workhorse alongside electric-blue"
+    },
+    "amber": {
+      "hex": "#F39C12",
+      "role": "highlight — decisional dimension, focal warmth, AI signature",
+      "dominance": "ACCENT ONLY — single focal element per composition; NEVER dominant; NEVER background"
+    },
+    "coral": {
+      "hex": "#E07A6E",
+      "role": "political dimension — recourse, warmth without aggression",
+      "dominance": "political-dimension scenes only"
+    },
+    "white": {
+      "hex": "#FFFFFF",
+      "role": "pure highlight",
+      "dominance": "sparingly — brightest pin-point highlight only"
+    },
+    "muted-gray": {
+      "hex": "#95A5A6",
+      "role": "caption / source text",
+      "dominance": "text only — never on visuals"
+    }
+  },
+  "dimensions": {
+    "_comment": "Semantic mapping: each thematic dimension maps to one palette colour.",
+    "ideological": "electric-blue",
+    "political":   "coral",
+    "technical":   "teal",
+    "decisional":  "amber"
+  }
+}
