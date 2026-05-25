@@ -1,0 +1,25 @@
+# Project configuration for a new manual in the family-stx-manuels line.
+# Consumes streamtex-pack-design (universal components + foundations) and
+# streamtex-pack-manuals (manual-specific covers, pitch heroes, level badges).
+
+[project]
+name = "MANUAL_NAME"
+version = "0.1.0"
+
+[[packs]]
+type = "git"
+name = "streamtex-pack-design"
+ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-design"
+rev = "pack-design-v0.3.0"
+
+[[packs]]
+type = "git"
+name = "streamtex-pack-manuals"
+ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-manuals"
+rev = "pack-manuals-v0.2.0"
+
+[design_system]
+use = "default"
+
+[resolution]
+prefer = ["streamtex-pack-manuals", "streamtex-pack-design"]

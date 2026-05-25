@@ -1,0 +1,26 @@
+# Project configuration for a new training session / instructor-led deck.
+# Consumes the same two packs as a manual, but selects the `training-default`
+# kit so the trainer / FAQ / footer / glossary / references components are
+# available.
+
+[project]
+name = "TRAINING_NAME"
+version = "0.1.0"
+
+[[packs]]
+type = "git"
+name = "streamtex-pack-design"
+ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-design"
+rev = "pack-design-v0.3.0"
+
+[[packs]]
+type = "git"
+name = "streamtex-pack-manuals"
+ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-manuals"
+rev = "pack-manuals-v0.2.0"
+
+[design_system]
+use = "default"
+
+[resolution]
+prefer = ["streamtex-pack-manuals", "streamtex-pack-design"]

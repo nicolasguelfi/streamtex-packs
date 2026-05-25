@@ -1,6 +1,6 @@
 [project]
 name = "streamtex-pack-design"
-version = "0.2.5"
+version = "0.3.0"
 description = "Official StreamTeX design pack: components, design systems, kits, templates."
 readme = "README.md"
 authors = [{ name = "Nicolas Guelfi" }]
@@ -25,9 +25,7 @@ include = ["streamtex_design*"]
 streamtex_design = [
     "_pack_manifest.toml",
     "kits/*.toml",
-    "project_blueprints/*.md",
     "cli_templates/**/*",
-    "samples/**/*",
 ]
 
 [tool.ruff]

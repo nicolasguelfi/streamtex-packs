@@ -12,6 +12,7 @@ from streamtex_design.design_systems.default import (
     _CardGrid,
     _Citation,
     _ComparisonTable,
+    _Fonts,
     _InlineEmphasis,
     _StatHero,
     _Takeaways,
@@ -26,6 +27,11 @@ class _Colors:
     surface = Style("background-color: #ffffff;", "surface")
     text = Style("color: #1c1f26;", "text")
     muted = Style("color: #5a6470;", "muted")
+    info = Style("color: #1f4e79;", "color_info")
+    success = Style("color: #2e7d32;", "color_success")
+    warning = Style("color: #e69100;", "color_warning")
+    critical = Style("color: #c0392b;", "color_critical")
+    highlight = Style("color: #b8860b;", "color_highlight")
 
 
 class _Callouts:
@@ -58,6 +64,7 @@ class DesignSystem:
     titles = _Titles
     callouts = _Callouts
     body = _Body
+    fonts = _Fonts
     stat_hero = _StatHero
     card_grid = _CardGrid
     takeaways = _Takeaways

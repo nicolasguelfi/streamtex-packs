@@ -1,0 +1,25 @@
+# Project configuration for a new module in the family-stx-gse line.
+# Consumes streamtex-pack-design (foundations + universal components) and
+# streamtex-pack-gse (GSE design system + transition_gse + gse_letter).
+
+[project]
+name = "GSE_MODULE_NAME"
+version = "0.1.0"
+
+[[packs]]
+type = "git"
+name = "streamtex-pack-design"
+ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-design"
+rev = "pack-design-v0.3.0"
+
+[[packs]]
+type = "git"
+name = "streamtex-pack-gse"
+ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-gse"
+rev = "pack-gse-v0.1.0"
+
+[design_system]
+use = "gse"
+
+[resolution]
+prefer = ["streamtex-pack-gse", "streamtex-pack-design"]

@@ -20,6 +20,11 @@ class _Colors:
     surface = Style("background-color: #1c1f26;", "surface")
     text = Style("color: #FAFAFA;", "text")
     muted = Style("color: #95A5A6;", "muted")
+    info = Style("color: #7AB8F5;", "color_info")
+    success = Style("color: #27AE60;", "color_success")
+    warning = Style("color: #F39C12;", "color_warning")
+    critical = Style("color: #E74C3C;", "color_critical")
+    highlight = Style("color: #F4D03F;", "color_highlight")
 
 
 class _Titles:
@@ -56,6 +61,12 @@ class _Body:
     paragraph = Style("font-size: var(--stx-scale-8, 20pt); line-height: 1.6;", "body_p")
     emphasis = Style("font-weight: 700; color: #7AB8F5;", "body_em")
     code = Style("font-family: monospace; background: rgba(255,255,255,0.05); padding: 1px 6px;", "body_code")
+
+
+class _Fonts:
+    body_family = Style("font-family: sans-serif;", "font_body")
+    heading_family = Style("font-family: sans-serif;", "font_heading")
+    code_family = Style("font-family: 'Courier New', Consolas, Monaco, monospace;", "font_code")
 
 
 class _StatHero:
@@ -118,6 +129,7 @@ class DesignSystem:
     titles = _Titles
     callouts = _Callouts
     body = _Body
+    fonts = _Fonts
     stat_hero = _StatHero
     card_grid = _CardGrid
     takeaways = _Takeaways

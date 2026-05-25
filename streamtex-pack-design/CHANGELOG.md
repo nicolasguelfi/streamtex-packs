@@ -5,6 +5,58 @@ All notable changes to streamtex-pack-design are documented in this file.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/);
 versions follow semver pinned to the reuse architecture milestones.
 
+## [0.3.0] — 2026-05-23 — Foundation bundles (Colors extended, Fonts) + public re-exports + transition_gse relocated
+
+### Removed
+
+- **`transition_gse` component** moved to the new `streamtex-pack-gse`
+  pack (v0.1.0). The component was project-specific (`extrapolable=false`)
+  and tagged `ai4se6d`; it never belonged in the generic design pack.
+  Consumers should depend on `streamtex-pack-gse` and import via
+  `from streamtex_gse.components.transition_gse import transition_gse`.
+  No other consumer than the legacy ai4se6d pattern was using it from
+  pack-design.
+
+### Added
+
+- **`_Colors` bundle extended** with 5 semantic colors across all 3 design
+  systems (default, modern_dark, modern_light): `info`, `success`, `warning`,
+  `critical`, `highlight`. Hex values match the existing callout palettes
+  per-DS for visual consistency, so a consumer can now reach for a uniform
+  semantic palette without redefining one in their `custom/styles.py`.
+- **New `_Fonts` bundle** exposing `body_family`, `heading_family`,
+  `code_family` as composable `Style` objects on all 3 design systems.
+  Initial values match the current ecosystem defaults (`sans-serif` for body
+  and headings; `'Courier New', Consolas, Monaco, monospace` stack for code).
+  `heading_family` is kept as a distinct slot from `body_family` even though
+  the values are identical today, so a downstream document can diverge them
+  later without touching the pack.
+- **Public re-exports** in `streamtex_design/__init__.py`: `DesignSystem`,
+  `Colors`, `Titles`, `Fonts`, `Callouts`, `Body` — all mapped to the
+  `default` design system. Downstream documents can write
+  `from streamtex_design import Colors, Fonts` directly instead of navigating
+  the `design_systems` subpackage.
+- **CLI templates** under `streamtex_design/cli_templates/` for the three
+  most common new-document scenarios: `new-manual/` (manual in the
+  family-stx-manuels line, consumes pack-design + pack-manuals),
+  `new-training/` (instructor-led deck, consumes pack-design + pack-manuals
+  training kit), `new-gse-module/` (module in the family-stx-gse line,
+  consumes pack-design + pack-gse with the `gse` design system).
+
+### Changed
+
+- Version bumped from 0.2.5 to 0.3.0 (minor: additive, no breaking changes
+  for current components — they don't reference the new bundle attributes).
+- `_pack_manifest.toml` version synced with `pyproject.toml` (was lagging
+  at 0.2.4).
+
+### Notes
+
+- `_Fonts` is **not yet** declared in `REQUIRED_BUNDLES` of the streamtex
+  core `DesignSystemProtocol`. The promotion to REQUIRED is planned for a
+  future minor once third-party design systems (if any) have a chance to add
+  the bundle.
+
 ## [0.2.5] — 2026-05-21 — Slide TOC propagation, part_intro, hover docstring fix
 
 ### Added
