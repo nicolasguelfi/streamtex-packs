@@ -1,0 +1,25 @@
+j'ai développé des fonctionalités de la librairie streamtex (i.e. stx) pour permettre la réutilisation d'un ensemble de composants de design graphique afin d'avoir une approche commune et une représentaiton graphique homogène sur plusieurs documents streamtex.
+
+J'avais fait tous les projets suivants avant cette foncitonalité:
+
+- family-stx-manuels : tous les manuels utilisateurs de la librairie sités ici:
+/Volumes/Mac_Data/Win_data/data/backups/Dropbox-nicolas.guelfi@laposte.net/messir Dropbox/Nicolas Guelfi/users/NG/dev-dropbox/dvlpt/eclipse/git/github/streamtex-dev/streamtex-docs/manuals
+
+- family-stx-gse : tous les documents pour les sessions de formation GSE situés ici:
+/Volumes/Mac_Data/Win_data/data/backups/Dropbox-nicolas.guelfi@laposte.net/messir Dropbox/Nicolas Guelfi/users/NG/Projets/AISE/ROS/trainings/AI4SE/githubs/AI4SE6D_STX/projects/ai4se6d
+
+
+Normalement, les artefacts claude permettent de fournir des chemins vers des dossiers de documents stx et propose un "pack" qui regroupe tous les élements qui pourraient être réutilisés entre les documents et pour les prochains documents de la même ligne / famille.
+
+
+Peux tu vérifier que les packs situés ici:
+/Volumes/Mac_Data/Win_data/data/backups/Dropbox-nicolas.guelfi@laposte.net/messir Dropbox/Nicolas Guelfi/users/NG/dev-dropbox/dvlpt/eclipse/git/github/streamtex-dev/streamtex-packs
+
+Sont bien complets pour couvrir tout ce qui peut ou doit être commun entre tous les documents des familles:
+family-stx-manuels
+family-stx-gse
+
+
+Analyse, fais des propositions avec des alternatives si nécessaire et pour chaque proposition indique les avantages et inconvénients.
+
+Ne touche à rien.
