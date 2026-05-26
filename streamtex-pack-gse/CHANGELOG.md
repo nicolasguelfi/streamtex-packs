@@ -5,6 +5,72 @@ All notable changes to streamtex-pack-gse are documented in this file.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/);
 versions follow semver pinned to the reuse architecture milestones.
 
+## [2.0.0] — 2026-05-26 — Manifest 0.2: 6 extended artifact categories shipped
+
+### Added
+
+- **Palette artifact** ``palettes/main.json`` — canonical GSE palette (7 colors
+  + 4 semantic dimensions: ideological / political / technical / decisional).
+  Multi-runtime by design: readable by Python (Style atoms via the engine),
+  Figma export, Midjourney prompts, any tool that reads JSON.
+- **AI prompt artifact** ``ai_prompts/scene_generation/`` — prefix.txt + 3
+  orientation-specific suffix files (landscape/portrait/square).
+- **Archetype artifacts (11)** — balance, ballot, bridge, closing, cycle,
+  doorway, federation, forking-path, horizon, panel-spires, path-of-arrows.
+  Each has a YAML frontmatter (name, description, orientation, status,
+  tags, extrapolable, since, palette_refs) followed by the scene
+  composition body.
+- **Guideline artifacts (2)** — ``graphic-line`` (GSE visual identity
+  spec) and ``composition-rules`` (R1-R13 universal slide composition
+  rules).
+- **Skill artifact ``gse-author``** — Claude Code skill that helps
+  authors pick the right archetype, apply palette tokens correctly,
+  compose AI prompts that respect GSE guardrails. Installed via
+  ``stx artifact install gse-author --kind skill``.
+- **Integration recipe ``integrations/streamtex/``** — README documenting
+  the streamtex-side consumption pattern, plus pointers to palette / AI
+  prompt loaders.
+
+### Sources
+
+- All artifacts above are migrations from the legacy
+  ``streamtex-shared/graphic-designs/gse/`` data-first system (now
+  removed from the workspace — EAR-5). The palette / prompts / archetypes
+  / guidelines / integration recipe are byte-for-byte (or close)
+  equivalents ; the ``gse-author`` skill is new (synthesises the GSE
+  workflows into a single agent-readable entry point).
+- ``[pack.data]`` section in ``_pack_manifest.toml`` declaring the two new
+  artifact categories (manifest format 0.2).
+- Design system ``gse`` is now **generated at import time** from
+  ``palettes/main.json`` via ``streamtex.core.artifacts.palette``. Hex values
+  fall back to hardcoded canonical constants when the palette file is missing
+  (degraded test environments).
+- ``setuptools.package-data`` extended to ship ``palettes/*.json`` and
+  ``ai_prompts/**/*.txt``.
+
+### Changed
+
+- Bumped manifest format from ``0.1`` to ``0.2``.
+- Bumped version from ``0.1.0`` to ``2.0.0`` (major: jumps to align with the
+  ``streamtex-shared/gse`` v1.0.0 that this pack supersedes; subsequent
+  ``streamtex-shared/`` will be removed entirely once this pack is published).
+- Bumped ``streamtex`` compat to ``>=0.7.16`` (the engine requires the
+  ``streamtex.core.artifacts`` module added in 0.7.16's siblings).
+- The ``_Colors`` bundle now exposes the 4 semantic dimensions
+  (``ideological``, ``political``, ``technical``, ``decisional``) in addition
+  to the existing letter accents (``g_letter``, ``s_letter``, ``e_letter``).
+  Letter accents are mapped via convention: G → amber, S → teal, E →
+  electric-blue.
+
+### Migration
+
+- ``streamtex-shared/graphic-designs/gse/`` is **fully superseded** by this
+  pack. The data files (palette JSON + prompts) are now distributed via the
+  pip/git pack pipeline rather than file-copy.
+- Existing consumers using the previous ``g_letter = #F5A623`` mapping are
+  silently corrected to the canonical ``amber = #F39C12``. The new value is
+  the one documented in ``graphic-line.md §3``.
+
 ## [0.1.0] — 2026-05-23 — First public release
 
 ### Added

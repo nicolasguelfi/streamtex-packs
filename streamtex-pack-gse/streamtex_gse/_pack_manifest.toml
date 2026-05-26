@@ -1,17 +1,30 @@
 # streamtex-pack-gse — Project-specific pack for the AI4SE / GSE training family.
 
 [manifest]
-format = "0.1"
+format = "0.2"
 
 [pack]
 name = "streamtex-pack-gse"
-version = "0.1.0"
+version = "2.0.0"
 author = "Nicolas Guelfi"
 license = "BUSL-1.1"
-streamtex_compat = ">=0.7.7,<1.0"
+streamtex_compat = ">=0.7.16,<1.0"
 
 [entrypoint]
 module = "streamtex_gse"
 
 [scopes]
-gse = "Project-specific components for the AI4SE / GSE training family (transition_gse, gse_letter, gse design system)"
+gse = "Project-specific components for the AI4SE / GSE training family (transition_gse, gse_letter, gse design system, palette, AI prompts)"
+
+# Manifest 0.2 — extended artifacts. Each list entry names an artifact slug
+# whose file/dir lives under the matching subdir of streamtex_gse/.
+[pack.data]
+palettes = ["main"]
+ai_prompts = ["scene_generation"]
+archetypes = [
+    "balance", "ballot", "bridge", "closing", "cycle", "doorway",
+    "federation", "forking-path", "horizon", "panel-spires", "path-of-arrows",
+]
+guidelines = ["graphic-line", "composition-rules"]
+skills = ["gse-author"]
+integrations = ["streamtex"]
