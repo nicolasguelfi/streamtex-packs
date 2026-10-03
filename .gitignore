@@ -10,7 +10,7 @@ dist/
 build/
 
 # uv
-.venv/
+.venv
 .uv-cache/
 
 # Ruff
