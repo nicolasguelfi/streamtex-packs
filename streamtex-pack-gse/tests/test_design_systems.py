@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import pytest
 from streamtex.core import validation
 
 import streamtex_gse.design_systems.gse as gse_mod

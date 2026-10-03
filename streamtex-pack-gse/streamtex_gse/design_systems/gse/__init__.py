@@ -19,7 +19,6 @@ from pathlib import Path
 
 from streamtex.core.artifacts.palette import load_palette_from_path
 from streamtex.styles import Style
-
 from streamtex_design.design_systems.default import (
     _Body,
     _Callouts,

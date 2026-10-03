@@ -79,3 +79,37 @@ jobs:
       - name: Ruff
         if: steps.changes.outputs.run == 'true'
         run: uv run ruff check streamtex_manuals/
+
+  pack-gse:
+    name: streamtex-pack-gse
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: streamtex-pack-gse
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect changes affecting streamtex-pack-gse
+        id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            run:
+              - 'streamtex-pack-gse/**'
+              - '.github/workflows/ci.yml'
+
+      - name: Install uv
+        if: steps.changes.outputs.run == 'true'
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        if: steps.changes.outputs.run == 'true'
+        run: uv sync
+
+      - name: Ruff
+        if: steps.changes.outputs.run == 'true'
+        run: uv run ruff check streamtex_gse/ tests/
+
+      - name: Pytest
+        if: steps.changes.outputs.run == 'true'
+        run: uv run pytest tests/ -v
