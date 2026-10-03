@@ -5,7 +5,7 @@ re-declares what's project-specific. Keep this file slim — never copy the
 entire pack palette into here; reuse via the imports below.
 """
 
-from streamtex.styles import Style, StxStyles
+from streamtex.styles import StxStyles, Style
 
 # Foundations from streamtex-pack-design 0.3.0+ — re-exports of the
 # `default` design system bundles. Override per-document if needed.

@@ -1,9 +1,10 @@
 """Welcome block — trainer profile + training header."""
 
 from streamtex import st_space
-from streamtex_design.design_systems.default import DesignSystem
 from streamtex_manuals.components.trainer_profile import trainer_profile
 from streamtex_manuals.components.training_header import training_header
+
+from streamtex_design.design_systems.default import DesignSystem
 
 DS = DesignSystem()
 

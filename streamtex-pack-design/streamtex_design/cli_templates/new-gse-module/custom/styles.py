@@ -4,10 +4,10 @@ Imports pack-design foundations and the GSE design system from
 streamtex-pack-gse. Custom project styles are minimal.
 """
 
-from streamtex.styles import Style, StxStyles
+from streamtex.styles import StxStyles, Style
+from streamtex_gse.design_systems.gse import DesignSystem as GseDS
 
 from streamtex_design import Body, Callouts, Fonts, Titles
-from streamtex_gse.design_systems.gse import DesignSystem as GseDS
 
 
 class ProjectColors:

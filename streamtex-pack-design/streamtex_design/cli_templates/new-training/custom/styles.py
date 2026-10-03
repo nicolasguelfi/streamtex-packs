@@ -1,7 +1,7 @@
 """Project palette for TRAINING_NAME — same shape as new-manual, kept slim
 by importing from the pack."""
 
-from streamtex.styles import Style, StxStyles
+from streamtex.styles import StxStyles, Style
 
 from streamtex_design import Body, Callouts, Colors, Fonts, Titles
 

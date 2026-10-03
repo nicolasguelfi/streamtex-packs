@@ -6,13 +6,12 @@ palette (amber highlight + G/S/E letter colors) is the default everywhere.
 
 from pathlib import Path
 
+import blocks
 import streamlit as st
 import streamtex as stx
+from custom.themes import dark
 from streamtex import st_book
 from streamtex.styles import StxStyles as sts
-
-from custom.themes import dark
-import blocks
 
 PROJECT_DIR = Path(__file__).parent
 
