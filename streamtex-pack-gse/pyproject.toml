@@ -8,7 +8,7 @@ license = "BUSL-1.1"
 license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = [
-    "streamtex>=0.7.16",
+    "streamtex>=0.7.17",
     "streamtex-pack-design @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-design-v0.3.0#subdirectory=streamtex-pack-design",
 ]
 

@@ -5,6 +5,14 @@ All notable changes to streamtex-pack-gse are documented in this file.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/);
 versions follow semver pinned to the reuse architecture milestones.
 
+## [Unreleased]
+
+### Fixed
+
+- ``streamtex`` floor raised to ``>=0.7.17``: ``streamtex.core.artifacts``
+  first ships in 0.7.17, so the declared ``>=0.7.16`` let a 0.7.16 install
+  fail at import (measured: the pack's tests do not even collect on 0.7.16).
+
 ## [2.0.0] — 2026-05-26 — Manifest 0.2: 6 extended artifact categories shipped
 
 ### Added
