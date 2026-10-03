@@ -21,10 +21,20 @@ For alternative design systems, import directly:
 
 from streamtex_design.design_systems.default import (
     DesignSystem,
+)
+from streamtex_design.design_systems.default import (
     _Body as Body,
+)
+from streamtex_design.design_systems.default import (
     _Callouts as Callouts,
+)
+from streamtex_design.design_systems.default import (
     _Colors as Colors,
+)
+from streamtex_design.design_systems.default import (
     _Fonts as Fonts,
+)
+from streamtex_design.design_systems.default import (
     _Titles as Titles,
 )
 

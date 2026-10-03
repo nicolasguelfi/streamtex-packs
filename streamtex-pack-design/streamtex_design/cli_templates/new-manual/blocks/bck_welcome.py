@@ -1,7 +1,8 @@
 """Welcome block — manual cover using level_badge_hero from pack-manuals."""
 
-from streamtex_design.design_systems.default import DesignSystem
 from streamtex_manuals.components.level_badge_hero import level_badge_hero
+
+from streamtex_design.design_systems.default import DesignSystem
 
 DS = DesignSystem()
 
