@@ -47,20 +47,23 @@ Add to your project `stx.toml`:
 [[packs]]
 type = "git"
 name = "streamtex-pack-design"
-ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-design"
+ref = "github.com/nicolasguelfi/streamtex-packs"
+subdirectory = "streamtex-pack-design"
 rev = "pack-design-v0.3.0"
 
 # Optional, depending on the document family:
 [[packs]]
 type = "git"
 name = "streamtex-pack-manuals"
-ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-manuals"
+ref = "github.com/nicolasguelfi/streamtex-packs"
+subdirectory = "streamtex-pack-manuals"
 rev = "pack-manuals-v0.2.0"
 
 [[packs]]
 type = "git"
 name = "streamtex-pack-gse"
-ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-gse"
+ref = "github.com/nicolasguelfi/streamtex-packs"
+subdirectory = "streamtex-pack-gse"
 rev = "pack-gse-v0.1.0"
 
 [design_system]

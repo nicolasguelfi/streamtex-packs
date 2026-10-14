@@ -232,7 +232,8 @@ In your project `stx.toml` :
 [[packs]]
 type = "git"
 name = "streamtex-pack-gse"
-ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-gse"
+ref = "github.com/nicolasguelfi/streamtex-packs"
+subdirectory = "streamtex-pack-gse"
 rev = "pack-gse-v2.0.0"
 
 [design_system]

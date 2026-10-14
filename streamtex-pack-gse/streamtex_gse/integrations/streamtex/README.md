@@ -11,13 +11,15 @@ removed).
 [[packs]]
 type = "git"
 name = "streamtex-pack-design"
-ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-design"
+ref = "github.com/nicolasguelfi/streamtex-packs"
+subdirectory = "streamtex-pack-design"
 rev = "pack-design-v0.3.0"
 
 [[packs]]
 type = "git"
 name = "streamtex-pack-gse"
-ref = "github.com/nicolasguelfi/streamtex-packs#streamtex-pack-gse"
+ref = "github.com/nicolasguelfi/streamtex-packs"
+subdirectory = "streamtex-pack-gse"
 rev = "pack-gse-v2.0.0"
 
 [design_system]
