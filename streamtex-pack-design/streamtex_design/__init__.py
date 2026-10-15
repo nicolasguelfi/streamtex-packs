@@ -6,8 +6,7 @@ bundles for typography/colors usable from consumer documents.
 
 Consume via:
 
-    pip install streamtex-design
-    stx pack add git:github.com/nicolasguelfi/streamtex-design@v0.3.0
+    stx pack add git:github.com/nicolasguelfi/streamtex-packs@pack-design-v0.3.1#subdirectory=streamtex-pack-design
 
 Public re-exports map to the ``default`` design system bundles, which is
 the canonical reference for downstream consumers:
@@ -38,7 +37,7 @@ from streamtex_design.design_systems.default import (
     _Titles as Titles,
 )
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 
 __all__ = [
     "DesignSystem",

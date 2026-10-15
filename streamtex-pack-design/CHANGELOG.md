@@ -5,6 +5,21 @@ All notable changes to streamtex-pack-design are documented in this file.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/);
 versions follow semver pinned to the reuse architecture milestones.
 
+## [0.3.1] — 2026-10-15 — Templates declare monorepo packs as ref + subdirectory
+
+### Fixed
+
+- **CLI templates** (`new-manual`, `new-training`, `new-gse-module`): their
+  `stx.toml` declares each monorepo pack with `ref` + `subdirectory` instead
+  of the old `ref = "…#<dir>"` form, which `stx validate` flags since
+  streamtex 0.7.46 (streamtex #125). The templates now pin
+  `pack-design-v0.3.1`.
+- **Install line** in the package docstring points to the streamtex-packs
+  monorepo (it still named the archived streamtex-design repository).
+- Import order for ruff 0.16; no behaviour change.
+
+No component, design system or kit changed.
+
 ## [0.3.0] — 2026-05-23 — Foundation bundles (Colors extended, Fonts) + public re-exports + transition_gse relocated
 
 ### Removed
