@@ -12,4 +12,4 @@ Consume via:
     stx pack add git:github.com/nicolasguelfi/streamtex-manuals@v0.1.0
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.1"

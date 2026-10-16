@@ -57,14 +57,14 @@ type = "git"
 name = "streamtex-pack-manuals"
 ref = "github.com/nicolasguelfi/streamtex-packs"
 subdirectory = "streamtex-pack-manuals"
-rev = "pack-manuals-v0.2.0"
+rev = "pack-manuals-v0.2.1"
 
 [[packs]]
 type = "git"
 name = "streamtex-pack-gse"
 ref = "github.com/nicolasguelfi/streamtex-packs"
 subdirectory = "streamtex-pack-gse"
-rev = "pack-gse-v0.1.0"
+rev = "pack-gse-v2.0.1"
 
 [design_system]
 use = "default"   # or "modern_dark", "modern_light", "gse"

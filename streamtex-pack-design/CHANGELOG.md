@@ -5,6 +5,19 @@ All notable changes to streamtex-pack-design are documented in this file.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/);
 versions follow semver pinned to the reuse architecture milestones.
 
+## [0.3.2] — 2026-10-16 — Projects made from the templates install again
+
+### Fixed
+
+- **CLI templates** (`new-manual`, `new-training`, `new-gse-module`): a project
+  made from them could not be locked (`uv lock`: "conflicting URLs for package
+  streamtex-pack-design"). They named pack-design v0.3.1 next to
+  pack-manuals v0.2.0 and pack-gse v0.1.0, which required pack-design v0.3.0
+  at an exact URL (streamtex-packs#2). They now name pack-manuals **v0.2.1**
+  and pack-gse **v2.0.1**, which require pack-design by name and range.
+  `tools/check_templates.py`, run by the CI, locks a project made from each
+  template the stx way and the Docker way.
+
 ## [0.3.1] — 2026-10-15 — Templates declare monorepo packs as ref + subdirectory
 
 ### Fixed

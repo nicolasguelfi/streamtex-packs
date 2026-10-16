@@ -28,7 +28,7 @@ type = "git"
 name = "streamtex-pack-gse"
 ref = "github.com/nicolasguelfi/streamtex-packs"
 subdirectory = "streamtex-pack-gse"
-rev = "pack-gse-v0.1.0"
+rev = "pack-gse-v2.0.1"
 
 [design_system]
 use = "gse"
@@ -41,7 +41,7 @@ In `pyproject.toml`:
 
 ```toml
 dependencies = [
-    "streamtex-pack-gse @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-gse-v0.1.0#subdirectory=streamtex-pack-gse",
+    "streamtex-pack-gse @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-gse-v2.0.1#subdirectory=streamtex-pack-gse",
 ]
 ```
 

@@ -72,13 +72,17 @@ jobs:
         if: steps.changes.outputs.run == 'true'
         uses: astral-sh/setup-uv@v3
 
+      # The pack requires streamtex-pack-design by name (streamtex-packs#2): it
+      # is not on PyPI, so it is installed from the sibling folder.
       - name: Install dependencies
         if: steps.changes.outputs.run == 'true'
-        run: uv sync
+        run: |
+          uv venv --python 3.12
+          uv pip install -e ../streamtex-pack-design -e . "pytest>=8.0" "ruff>=0.5" "streamtex[cli]>=0.7.17"
 
       - name: Ruff
         if: steps.changes.outputs.run == 'true'
-        run: uv run ruff check streamtex_manuals/
+        run: uv run --no-sync ruff check streamtex_manuals/
 
   pack-gse:
     name: streamtex-pack-gse
@@ -102,14 +106,46 @@ jobs:
         if: steps.changes.outputs.run == 'true'
         uses: astral-sh/setup-uv@v3
 
+      # The pack requires streamtex-pack-design by name (streamtex-packs#2): it
+      # is not on PyPI, so it is installed from the sibling folder.
       - name: Install dependencies
         if: steps.changes.outputs.run == 'true'
-        run: uv sync
+        run: |
+          uv venv --python 3.12
+          uv pip install -e ../streamtex-pack-design -e . "pytest>=8.0" "ruff>=0.5" "streamtex[cli]>=0.7.17"
 
       - name: Ruff
         if: steps.changes.outputs.run == 'true'
-        run: uv run ruff check streamtex_gse/ tests/
+        run: uv run --no-sync ruff check streamtex_gse/ tests/
 
       - name: Pytest
         if: steps.changes.outputs.run == 'true'
-        run: uv run pytest tests/ -v
+        run: uv run --no-sync pytest tests/ -v
+
+  templates:
+    name: CLI templates lock
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # the templates name pack tags
+
+      - name: Detect changes affecting the packs or the templates
+        id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            run:
+              - 'streamtex-pack-*/**'
+              - 'tools/check_templates.py'
+              - '.github/workflows/ci.yml'
+
+      - name: Install uv
+        if: steps.changes.outputs.run == 'true'
+        uses: astral-sh/setup-uv@v3
+
+      # A project made from each template must lock, the stx way (git sources)
+      # and the Docker way (direct URLs, --no-sources) — streamtex-packs#2.
+      - name: Lock a project made from each template
+        if: steps.changes.outputs.run == 'true'
+        run: uv run --no-project -p 3.12 python tools/check_templates.py

@@ -70,8 +70,8 @@ Add to your project's `pyproject.toml`:
 ```toml
 dependencies = [
     "streamtex-pack-design @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-design-v0.3.0#subdirectory=streamtex-pack-design",
-    "streamtex-pack-manuals @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-manuals-v0.2.0#subdirectory=streamtex-pack-manuals",
-    "streamtex-pack-gse @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-gse-v0.1.0#subdirectory=streamtex-pack-gse",
+    "streamtex-pack-manuals @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-manuals-v0.2.1#subdirectory=streamtex-pack-manuals",
+    "streamtex-pack-gse @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-gse-v2.0.1#subdirectory=streamtex-pack-gse",
 ]
 ```
 
@@ -108,8 +108,8 @@ Each pack has its own version, released via **prefixed git tags** on the
 monorepo:
 
 - `pack-design-v0.3.0` → release of `streamtex-pack-design v0.3.0`
-- `pack-manuals-v0.2.0` → release of `streamtex-pack-manuals v0.2.0`
-- `pack-gse-v0.1.0` → release of `streamtex-pack-gse v0.1.0`
+- `pack-manuals-v0.2.1` → release of `streamtex-pack-manuals v0.2.1`
+- `pack-gse-v2.0.1` → release of `streamtex-pack-gse v2.0.1`
 - `pack-{name}-vX.Y.Z` → release of `streamtex-pack-{name} vX.Y.Z`
 
 To consume, reference the prefixed tag in the `@` clause of the dep URL.

@@ -20,7 +20,7 @@ type = "git"
 name = "streamtex-pack-gse"
 ref = "github.com/nicolasguelfi/streamtex-packs"
 subdirectory = "streamtex-pack-gse"
-rev = "pack-gse-v2.0.0"
+rev = "pack-gse-v2.0.1"
 
 [design_system]
 use = "gse"

@@ -1,6 +1,6 @@
 [project]
 name = "streamtex-pack-manuals"
-version = "0.2.0"
+version = "0.2.1"
 description = "Manual-authoring + training components on top of streamtex-pack-design (level badges, pitch heroes, FAQ, glossary, references, trainer profile, header/footer strips)."
 readme = "README.md"
 authors = [{ name = "Nicolas Guelfi" }]
@@ -9,14 +9,8 @@ license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = [
     "streamtex>=0.7.7",
-    "streamtex-pack-design @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-design-v0.3.0#subdirectory=streamtex-pack-design",
+    "streamtex-pack-design>=0.3,<0.4",
 ]
-
-# Local dev override — points to the sibling pack in the monorepo
-# (uv sync --no-sources in CI/Docker ignores this and falls back to the
-# git+https url in the dep above).
-[tool.uv.sources]
-streamtex-pack-design = { path = "../streamtex-pack-design", editable = true }
 
 [project.entry-points."streamtex.packs"]
 streamtex-pack-manuals = "streamtex_manuals"

@@ -38,7 +38,7 @@ Copy the template folder, rename it, then add to your parent
 ```toml
 dependencies = [
     "streamtex>=0.7.7",
-    "streamtex-pack-design @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-design-v0.3.1#subdirectory=streamtex-pack-design",
+    "streamtex-pack-design @ git+https://github.com/nicolasguelfi/streamtex-packs.git@pack-design-v0.3.2#subdirectory=streamtex-pack-design",
     # plus pack-manuals / pack-gse depending on the template chosen
 ]
 ```

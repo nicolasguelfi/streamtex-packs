@@ -5,7 +5,7 @@ format = "0.1"
 
 [pack]
 name = "streamtex-pack-manuals"
-version = "0.2.0"
+version = "0.2.1"
 author = "Nicolas Guelfi"
 license = "BUSL-1.1"
 streamtex_compat = ">=0.7.7,<1.0"

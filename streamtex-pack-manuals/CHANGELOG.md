@@ -5,6 +5,17 @@ All notable changes to streamtex-pack-manuals are documented in this file.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/);
 versions follow semver pinned to the reuse architecture milestones.
 
+## [0.2.1] — 2026-10-16 — pack-design required by name and range
+
+### Fixed
+
+- **Depends on `streamtex-pack-design>=0.3,<0.4`** instead of an exact git URL
+  (`@pack-design-v0.3.0`), and ships no `[tool.uv.sources]`: uv applied that
+  local path when the pack came from git, which gave pack-design a third URL.
+  A project using this pack with any pack-design 0.3.x now locks; the project
+  supplies the pack's source, as `stx pack sync` does (streamtex-packs#2).
+  `__version__` matches the release (it said 0.1.0).
+
 ## [0.2.0] — 2026-05-23 — Training components (FAQ, trainer, header/footer, glossary, references, changelog)
 
 ### Added

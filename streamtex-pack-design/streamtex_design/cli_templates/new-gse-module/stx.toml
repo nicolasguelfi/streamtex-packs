@@ -11,14 +11,14 @@ type = "git"
 name = "streamtex-pack-design"
 ref = "github.com/nicolasguelfi/streamtex-packs"
 subdirectory = "streamtex-pack-design"
-rev = "pack-design-v0.3.1"
+rev = "pack-design-v0.3.2"
 
 [[packs]]
 type = "git"
 name = "streamtex-pack-gse"
 ref = "github.com/nicolasguelfi/streamtex-packs"
 subdirectory = "streamtex-pack-gse"
-rev = "pack-gse-v0.1.0"
+rev = "pack-gse-v2.0.1"
 
 [design_system]
 use = "gse"

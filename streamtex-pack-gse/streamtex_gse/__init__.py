@@ -12,13 +12,13 @@ Contents:
 Consume via:
 
     pip install streamtex-pack-gse
-    stx pack add git:github.com/nicolasguelfi/streamtex-packs@pack-gse-v2.0.0
+    stx pack add git:github.com/nicolasguelfi/streamtex-packs@pack-gse-v2.0.1
 
 Public re-exports map to the ``gse`` design system bundles.
 """
 
 from streamtex_gse.design_systems.gse import DesignSystem
 
-__version__ = "2.0.0"
+__version__ = "2.0.1"
 
 __all__ = ["DesignSystem"]

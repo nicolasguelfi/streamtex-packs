@@ -5,10 +5,15 @@ All notable changes to streamtex-pack-gse are documented in this file.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/);
 versions follow semver pinned to the reuse architecture milestones.
 
-## [Unreleased]
+## [2.0.1] — 2026-10-16 — pack-design required by name and range
 
 ### Fixed
 
+- **Depends on `streamtex-pack-design>=0.3,<0.4`** instead of an exact git URL
+  (`@pack-design-v0.3.0`), and ships no `[tool.uv.sources]` (pack-design and
+  streamtex local paths): uv applied them when the pack came from git. A
+  project using this pack with any pack-design 0.3.x now locks
+  (streamtex-packs#2).
 - ``streamtex`` floor raised to ``>=0.7.17``: ``streamtex.core.artifacts``
   first ships in 0.7.17, so the declared ``>=0.7.16`` let a 0.7.16 install
   fail at import (measured: the pack's tests do not even collect on 0.7.16).

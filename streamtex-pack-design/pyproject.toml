@@ -1,6 +1,6 @@
 [project]
 name = "streamtex-pack-design"
-version = "0.3.1"
+version = "0.3.2"
 description = "Official StreamTeX design pack: components, design systems, kits, templates."
 readme = "README.md"
 authors = [{ name = "Nicolas Guelfi" }]
